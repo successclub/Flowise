@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PiBuddy | Nebula Landing</title>
+    <style>
+      :root {
+        --ink: #0a0a0f;
+        --cloud: #f5f7fb;
+        --accent: #f8914a;
+        --purple: #7d5af5;
+        --teal: #21b6a8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Spoqa Han Sans Neo', 'Noto Sans KR', sans-serif;
+      }
+
+      body {
+        background-color: var(--cloud);
+        color: var(--ink);
+        min-height: 100vh;
+      }
+
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 7vw;
+      }
+
+      .top-bar strong {
+        font-size: 1.15rem;
+        letter-spacing: 0.08em;
+      }
+
+      .pill-nav {
+        display: flex;
+        gap: 12px;
+        background: rgba(10, 10, 15, 0.05);
+        border-radius: 999px;
+        padding: 8px 12px;
+      }
+
+      .pill-nav a {
+        text-decoration: none;
+        color: rgba(10, 10, 15, 0.66);
+        font-size: 0.92rem;
+        padding: 10px 18px;
+        border-radius: 999px;
+        transition: background 0.2s ease, color 0.2s ease;
+      }
+
+      .pill-nav a:hover {
+        background: white;
+        color: var(--ink);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        align-items: center;
+        gap: 64px;
+        padding: 80px 7vw 64px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(3rem, 6vw, 4.2rem);
+        line-height: 1.05;
+        margin-bottom: 28px;
+      }
+
+      .hero-copy h1 em {
+        background: linear-gradient(120deg, var(--accent), var(--purple));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: normal;
+      }
+
+      .hero-copy p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba(10, 10, 15, 0.72);
+        margin-bottom: 32px;
+      }
+
+      .form-card {
+        background: white;
+        border-radius: 28px;
+        padding: 32px;
+        box-shadow: 0 18px 60px rgba(41, 52, 85, 0.12);
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .form-card h2 {
+        font-size: 1.4rem;
+      }
+
+      .inline-input {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .inline-input input {
+        flex: 1;
+        min-width: 200px;
+        padding: 14px 16px;
+        border: 1px solid rgba(10, 10, 15, 0.12);
+        border-radius: 16px;
+        font-size: 0.95rem;
+      }
+
+      .inline-input button {
+        padding: 14px 22px;
+        background: linear-gradient(135deg, var(--accent), var(--purple));
+        color: white;
+        border: none;
+        border-radius: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .inline-input button:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero-support {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 18px;
+        margin-top: 16px;
+      }
+
+      .support-pod {
+        display: flex;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(125, 90, 245, 0.08);
+      }
+
+      .support-pod span {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        color: var(--purple);
+        font-weight: 700;
+      }
+
+      .support-pod p {
+        font-size: 0.94rem;
+        color: rgba(10, 10, 15, 0.7);
+      }
+
+      .highlight-strip {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 48px 7vw;
+      }
+
+      .highlight {
+        background: white;
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 12px 30px rgba(41, 52, 85, 0.08);
+      }
+
+      .highlight h3 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+      }
+
+      .highlight p {
+        color: rgba(10, 10, 15, 0.62);
+        line-height: 1.6;
+      }
+
+      .badge-deck {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+
+      .badge {
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(33, 182, 168, 0.12);
+        color: var(--teal);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+
+      footer {
+        padding: 60px 7vw 72px;
+        text-align: center;
+        color: rgba(10, 10, 15, 0.55);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 640px) {
+        .inline-input {
+          flex-direction: column;
+        }
+
+        .inline-input button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <strong>PiBuddy Nebula</strong>
+      <div class="pill-nav">
+        <a href="#benefit">핵심 기능</a>
+        <a href="#program">프로그램</a>
+        <a href="#waitlist">웨이팅</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>
+          파이오니어가 만드는
+          <br />
+          <em>커뮤니티 OS</em>
+        </h1>
+        <p>
+          온·오프라인 활동을 연결하는 조직형 커뮤니티 플랫폼. PiBuddy Nebula는 챕터 기반으로
+          움직이며, 셀 리더를 위한 운영 툴과 실시간 임팩트 대시보드를 제공합니다.
+        </p>
+        <div class="hero-support">
+          <div class="support-pod">
+            <span>1</span>
+            <p>지역별 챕터 구성 &amp; 관리 자동화</p>
+          </div>
+          <div class="support-pod">
+            <span>2</span>
+            <p>Pi 생태계 프로젝트 매칭 큐레이션</p>
+          </div>
+          <div class="support-pod">
+            <span>3</span>
+            <p>활동 리포트와 성장 지표 대시보드</p>
+          </div>
+        </div>
+      </div>
+      <form class="form-card" id="waitlist">
+        <h2>웨이팅 리스트 우선 등록</h2>
+        <p>파이오니어 팀을 등록하면 베타 초대 링크와 운영 가이드 킷을 제공합니다.</p>
+        <div class="inline-input">
+          <input type="text" placeholder="이름 또는 팀명" />
+          <input type="email" placeholder="Pi 지갑 이메일" />
+          <button type="submit">웨이팅 등록</button>
+        </div>
+        <p style="font-size: 0.82rem; color: rgba(10, 10, 15, 0.5)">
+          인증된 Pi 지갑 주소로만 초대장이 발송됩니다.
+        </p>
+      </form>
+    </section>
+
+    <section class="highlight-strip" id="benefit">
+      <div class="highlight">
+        <h3>셀 리더 운영 툴킷</h3>
+        <p>오프라인 밋업 체크인, 활동 마일리지, Pi 토큰 리워드를 한 화면에서 관리합니다.</p>
+        <div class="badge-deck">
+          <span class="badge">어드민 대시보드</span>
+          <span class="badge">QR 체크인</span>
+          <span class="badge">리워드 자동 분배</span>
+        </div>
+      </div>
+      <div class="highlight">
+        <h3>지식 공유 라이브러리</h3>
+        <p>Pi 생태계 개발자, 크리에이터, 사업자들의 튜토리얼과 사례를 큐레이션합니다.</p>
+        <div class="badge-deck">
+          <span class="badge">세션 다시보기</span>
+          <span class="badge">가이드 문서</span>
+          <span class="badge">번역 지원</span>
+        </div>
+      </div>
+      <div class="highlight" id="program">
+        <h3>Global Pioneer Program</h3>
+        <p>분기마다 운영되는 챌린지 프로그램으로 Pi 생태계 프로젝트를 발굴하고 연결합니다.</p>
+        <div class="badge-deck">
+          <span class="badge">지역별 코호트</span>
+          <span class="badge">코치 매칭</span>
+          <span class="badge">Pi Grant</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 PiBuddy Nebula · Pi Network 커뮤니티에 의해, 커뮤니티를 위해 만들어졌습니다.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PiBuddy | Aurora Landing</title>
+    <style>
+      :root {
+        --pi-purple: #5a3df0;
+        --pi-pink: #ff73d9;
+        --pi-yellow: #ffc857;
+        --bg-dark: #0f1020;
+        --text-light: #f7f8ff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+      }
+
+      body {
+        background: radial-gradient(circle at 20% 20%, rgba(255, 198, 87, 0.25), transparent 45%),
+          radial-gradient(circle at 80% 0%, rgba(255, 115, 217, 0.35), transparent 55%),
+          radial-gradient(circle at 50% 80%, rgba(90, 61, 240, 0.4), transparent 50%),
+          var(--bg-dark);
+        color: var(--text-light);
+        min-height: 100vh;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 32px 6vw;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 28px;
+        list-style: none;
+      }
+
+      nav a {
+        color: rgba(247, 248, 255, 0.78);
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--text-light);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 48px;
+        align-items: center;
+        padding: 96px 6vw 72px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 5vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 24px;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(120deg, var(--pi-purple), var(--pi-pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba(247, 248, 255, 0.72);
+        margin-bottom: 36px;
+      }
+
+      .cta-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .cta {
+        border: none;
+        padding: 16px 32px;
+        border-radius: 999px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta.primary {
+        background: linear-gradient(135deg, var(--pi-purple), var(--pi-pink));
+        color: var(--text-light);
+        box-shadow: 0 12px 32px rgba(90, 61, 240, 0.35);
+      }
+
+      .cta.secondary {
+        background: transparent;
+        color: var(--text-light);
+        border: 1px solid rgba(247, 248, 255, 0.3);
+      }
+
+      .cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(90, 61, 240, 0.45);
+      }
+
+      .stat-card {
+        backdrop-filter: blur(16px);
+        background: rgba(24, 26, 48, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 32px;
+        display: grid;
+        gap: 24px;
+      }
+
+      .stat-card h3 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.7;
+      }
+
+      .stat-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .stat strong {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-light);
+      }
+
+      .stat span {
+        font-size: 0.9rem;
+        color: rgba(247, 248, 255, 0.6);
+      }
+
+      .timeline {
+        padding: 0 6vw 96px;
+      }
+
+      .timeline-title {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+      }
+
+      .timeline-track {
+        position: relative;
+        padding-left: 24px;
+        border-left: 2px solid rgba(247, 248, 255, 0.15);
+        display: grid;
+        gap: 28px;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: -10px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 3px solid var(--bg-dark);
+        background: linear-gradient(135deg, var(--pi-purple), var(--pi-yellow));
+        box-shadow: 0 0 0 4px rgba(90, 61, 240, 0.2);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 28px;
+      }
+
+      .timeline-item h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+      }
+
+      .timeline-item p {
+        font-size: 0.95rem;
+        color: rgba(247, 248, 255, 0.68);
+        line-height: 1.6;
+      }
+
+      footer {
+        padding: 48px 6vw 72px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba(247, 248, 255, 0.55);
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        nav ul {
+          gap: 16px;
+        }
+
+        .cta-group {
+          width: 100%;
+        }
+
+        .cta {
+          flex: 1 auto;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">PiBuddy</div>
+      <nav>
+        <ul>
+          <li><a href="#mission">미션</a></li>
+          <li><a href="#timeline">로드맵</a></li>
+          <li><a href="#community">커뮤니티</a></li>
+          <li><a href="#beta">베타 참여</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>
+          <span>Pi Network</span> 팬덤을 위한
+          <br />
+          차세대 커뮤니티 허브
+        </h1>
+        <p>
+          PiBuddy는 전 세계 파이오니어를 연결하는 커뮤니티 플랫폼입니다. 실시간 네트워킹,
+          협업 프로젝트, 토큰 이코노미까지 한 번에 경험하세요.
+        </p>
+        <div class="cta-group">
+          <button class="cta primary">초기 얼리버드 등록</button>
+          <button class="cta secondary">플랫폼 미리보기</button>
+        </div>
+      </div>
+      <div class="stat-card" id="mission">
+        <h3>Pi Community 실시간 지표</h3>
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>128K</strong>
+            <span>일간 활성 파이오니어</span>
+          </div>
+          <div class="stat">
+            <strong>62</strong>
+            <span>운영 중인 글로벌 셀</span>
+          </div>
+          <div class="stat">
+            <strong>940</strong>
+            <span>진행 중인 프로젝트</span>
+          </div>
+          <div class="stat">
+            <strong>4.7/5</strong>
+            <span>커뮤니티 만족도</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline" id="timeline">
+      <h2 class="timeline-title">2025 로드맵</h2>
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4>Q1 · PiBuddy 베타 런칭</h4>
+          <p>커뮤니티 보드, 미션 배지, Pi 토큰 리워드 시스템을 중심으로 한 베타 테스트 시작.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4>Q2 · 파트너 마켓플레이스</h4>
+          <p>Pi 생태계 프로젝트와 연동되는 디앱 소개와 협업 매칭 기능 공개.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4>Q3 · 글로벌 코호트</h4>
+          <p>언어별 커뮤니티 셀 구축, 지역 리더 프로그램 운영, 오프라인 해커톤 개최.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <h4>Q4 · Pi 네이티브 월렛 통합</h4>
+          <p>Pi 네트워크 월렛과 직접 연결되어 리워드와 결제 플로우를 원클릭으로 경험.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer id="community">
+      <p>© 2025 PiBuddy. Pi Network 커뮤니티를 위한 독립 프로젝트.</p>
+      <div class="footer-links">
+        <a href="#" style="color: inherit; text-decoration: none">이용약관</a>
+        <a href="#" style="color: inherit; text-decoration: none">개인정보</a>
+        <a href="#beta" style="color: inherit; text-decoration: none">베타 신청</a>
+      </div>
+    </footer>
+  </body>
+</html>

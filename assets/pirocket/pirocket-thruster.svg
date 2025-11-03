@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PIROCKET Thruster Badge</title>
+  <desc id="desc">Angular badge showing PIROCKET propulsion with the Pi letterform and rocket exhaust.</desc>
+  <defs>
+    <linearGradient id="hex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff5f0" />
+      <stop offset="100%" stop-color="#ffd8bf" />
+    </linearGradient>
+    <linearGradient id="pFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5b2cc8" />
+      <stop offset="100%" stop-color="#7e44ff" />
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd36d" />
+      <stop offset="100%" stop-color="#ff5d27" />
+    </linearGradient>
+  </defs>
+  <path d="M256 40l194 112v208L256 480 62 360V152z" fill="url(#hex)" stroke="#ffd0aa" stroke-width="18" stroke-linejoin="round" />
+  <g transform="translate(0,-16)">
+    <path d="M188 168h160c52 0 86 30 86 82 0 50-34 80-82 80h-42v58h-76v-58h-46z" fill="url(#pFill)" />
+    <path d="M318 198c20 0 32 12 32 30s-12 30-32 30h-44v-60z" fill="#ffb347" />
+  </g>
+  <g transform="translate(0,18)">
+    <path d="M240 332h32v108l-16 32-16-32z" fill="#fff" opacity="0.85" />
+    <path d="M224 348h64l-12 60-20 20-20-20z" fill="url(#flame)" />
+    <path d="M214 420c18 24 66 24 84 0-28-4-56-4-84 0z" fill="#ff8f66" opacity="0.45" />
+  </g>
+  <circle cx="128" cy="206" r="24" fill="#ff8f66" opacity="0.5" />
+  <circle cx="384" cy="206" r="24" fill="#ff8f66" opacity="0.35" />
+</svg>

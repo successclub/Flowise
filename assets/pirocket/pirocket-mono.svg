@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PIROCKET Monoline Mark</title>
+  <desc id="desc">Minimal single-line icon of a rocket forming the Pi symbol for PIROCKET.</desc>
+  <rect width="512" height="512" rx="120" fill="#0f1326" />
+  <g fill="none" stroke="#ffb347" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 192h272" />
+    <path d="M180 168c0 140-12 208-32 248" />
+    <path d="M332 168c0 140 12 208 32 248" />
+    <path d="M256 200c48 0 88 36 88 80s-40 80-88 80h-36" />
+    <path d="M256 360l40 80-40 24-40-24z" />
+    <path d="M212 360l-48 90" />
+    <path d="M300 360l48 90" />
+    <path d="M256 104l40 64-40 32-40-32z" />
+  </g>
+  <circle cx="352" cy="160" r="18" fill="#ff8f66" />
+  <circle cx="160" cy="160" r="18" fill="#ff8f66" />
+</svg>

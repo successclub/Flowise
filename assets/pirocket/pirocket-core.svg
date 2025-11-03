@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PIROCKET Core Emblem</title>
+  <desc id="desc">Gradient coin with stylized rocket celebrating the PIROCKET brand.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="50%" stop-color="#ff7a59" />
+      <stop offset="100%" stop-color="#ff3f81" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="70%" stop-color="#ffe0da" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#f05a7f" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="rocket" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#d6e2ff" />
+    </linearGradient>
+    <linearGradient id="flame" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff7bc" />
+      <stop offset="100%" stop-color="#ff5e0e" />
+    </linearGradient>
+  </defs>
+  <circle cx="256" cy="256" r="236" fill="url(#bg)" />
+  <circle cx="220" cy="210" r="150" fill="url(#glow)" />
+  <path d="M168 288c60-138 148-170 148-170s32 88-28 226z" fill="rgba(255,255,255,0.25)" />
+  <g transform="translate(0,12)">
+    <path d="M256 148c-38 46-58 98-50 152l50 26 50-26c8-54-12-106-50-152z" fill="url(#rocket)" />
+    <path d="M256 194c-20 28-28 58-22 88l22 12 22-12c6-30-2-60-22-88z" fill="#7f95ff" opacity="0.2" />
+    <path d="M256 328c-20 0-40 16-40 48l40-16 40 16c0-32-20-48-40-48z" fill="url(#flame)" />
+    <path d="M216 376c20 34 80 34 120 0-36-8-84-8-120 0z" fill="#ff8f66" opacity="0.45" />
+  </g>
+  <path d="M130 310c38 70 112 104 190 86 38-9 72-30 96-60" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
+  <circle cx="360" cy="224" r="26" fill="#fff" opacity="0.9" />
+</svg>

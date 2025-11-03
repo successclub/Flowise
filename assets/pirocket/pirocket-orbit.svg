@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">PIROCKET Orbit Crest</title>
+  <desc id="desc">Icon highlighting the orbital energy of PIROCKET with a stylized P and motion trail.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#2b1b5a" />
+      <stop offset="55%" stop-color="#43218f" />
+      <stop offset="100%" stop-color="#5c28c6" />
+    </radialGradient>
+    <linearGradient id="ring" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="50%" stop-color="#ff7a59" />
+      <stop offset="100%" stop-color="#ffd296" />
+    </linearGradient>
+    <linearGradient id="trail" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd0ff" stop-opacity="0" />
+      <stop offset="65%" stop-color="#ffd0ff" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="164" fill="url(#bg)" />
+  <path d="M80 290c34 72 120 126 200 124 54-2 102-26 132-60" fill="none" stroke="url(#trail)" stroke-width="28" stroke-linecap="round" />
+  <path d="M104 224c82 112 222 154 320 94" fill="none" stroke="url(#ring)" stroke-width="32" stroke-linecap="round" stroke-opacity="0.9" />
+  <g transform="translate(-8,0)">
+    <path d="M214 152h76c70 0 112 34 112 92s-48 96-126 96h-38v76h-76z" fill="#ffffff" opacity="0.15" />
+    <path d="M214 172h64c52 0 82 24 82 66 0 42-30 66-82 66h-32v72h-32z" fill="#ffece5" />
+    <path d="M308 196a40 40 0 0 1 0 80h-52v-80z" fill="#ff8f66" />
+  </g>
+  <g transform="translate(40,30)">
+    <path d="M352 238l44 20-28 20z" fill="#ffc46a" />
+    <path d="M352 238l14-44a10 10 0 0 1 18-2l20 34z" fill="#fff7cc" />
+  </g>
+</svg>
